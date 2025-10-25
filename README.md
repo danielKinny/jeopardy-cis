@@ -34,3 +34,20 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Jeopardy Game
+
+This project includes a simple Jeopardy-style game.
+
+- Open the app and choose a Year (7–11) from the landing page.
+- Each year page shows 3 categories with five clues each ($100–$500).
+- Click a clue to view the question, then click "Reveal Answer" to see the correct response and add the clue value to your score.
+
+Run the dev server with:
+
+```bash
+npm install
+npm run dev
+```
+
+Then open http://localhost:3000 and select a year to play.
