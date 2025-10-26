@@ -78,7 +78,6 @@ export default function PasswordGate({ year, children }: Props) {
               Clear
             </button>
           </div>
-          <div className="mt-4 text-xs text-zinc-500">Tip: set the password with the environment variable <code>NEXT_PUBLIC_YEAR_PASSWORD</code> at build time.</div>
         </form>
       </div>
     </div>

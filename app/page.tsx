@@ -8,9 +8,6 @@ export default function Home() {
           Jeopardy — School Years
         </h1>
 
-        <p className="mb-6 max-w-2xl text-center text-lg text-zinc-600 dark:text-zinc-300">
-          Choose a school year to play a 3-category Jeopardy board (questions up to $500).
-        </p>
 
         <div className="grid w-full max-w-xl grid-cols-2 gap-4 sm:grid-cols-5">
           {[7, 8, 9, 10, 11].map((y) => (
@@ -24,9 +21,20 @@ export default function Home() {
           ))}
         </div>
 
-        <p className="mt-8 text-sm text-zinc-500 dark:text-zinc-400">
-          Each year contains 3 categories and five clues ($100–$500). Click a clue to reveal the question and then the answer.
-        </p>
+        <section className="mt-8 w-full text-center max-w-xl rounded-md border border-zinc-100 bg-zinc-50 p-6 text-sm text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300">
+          <h2 className="mb-2 text-lg font-semibold text-zinc-900 dark:text-zinc-50">How to play</h2>
+          <ul className="list-inside list-disc space-y-2">
+            <li>
+              The board shows categories and clues with dollar values. Click any clue to reveal the clue (the "answer").
+            </li>
+            <li>
+              Players must respond in the form of a question (for example: "What is 7.4?").
+            </li>
+            <li>
+              If a response is correct, the player's score increases by the clue's value; if incorrect, the question is passed onto the other team.
+            </li>
+          </ul>
+        </section>
       </main>
     </div>
   );
