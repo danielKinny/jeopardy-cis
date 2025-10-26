@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { getYear, YearData, Clue, Category } from "../../../data/years";
+import PasswordGate from "../../components/PasswordGate";
 
 function ClueModal({ clue, onClose, onReveal, revealedAnswer }: { clue: Clue | null; onClose: () => void; onReveal: () => void; revealedAnswer: string | null; }) {
   if (!clue) return null;
@@ -82,51 +83,53 @@ export default function YearPage() {
   }
 
   return (
-    <div className="min-h-screen bg-zinc-50 p-6 dark:bg-black">
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-6 flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">Year {yearNum} Jeopardy</h1>
-          <div className="flex items-center gap-4">
-            <Link href="/" className="rounded border px-4 py-2">Back</Link>
-          </div>
-        </div>
-
-        <div
-          className="grid w-full gap-4"
-          style={{ gridTemplateColumns: `repeat(${yearData.categories.length}, minmax(0, 1fr))` }}
-        >
-          {yearData.categories.map((cat: Category, ci: number) => (
-            <div key={ci} className="rounded bg-blue-700 p-2 text-center text-white dark:bg-blue-600">
-              <div className="mb-2 text-lg font-semibold">{cat.title}</div>
-              <div className="flex flex-col gap-2">
-                {cat.clues.map((clue: Clue, i: number) => {
-                  const key = `${ci}-${i}`;
-                  const isUsed = used[key];
-                  return (
-                    <button
-                      key={i}
-                      onClick={() => openClue(ci, i)}
-                      disabled={isUsed}
-                      className={`rounded cursor-pointer px-3 py-4 text-xl font-bold ${isUsed ? "opacity-40" : "bg-white text-blue-700"}`}
-                    >
-                      {clue.value}
-                    </button>
-                  );
-                })}
-              </div>
+    <PasswordGate year={yearNum}>
+      <div className="min-h-screen bg-zinc-50 p-6 dark:bg-black">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-6 flex items-center justify-between">
+            <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">Year {yearNum} Jeopardy</h1>
+            <div className="flex items-center gap-4">
+              <Link href="/" className="rounded border px-4 py-2">Back</Link>
             </div>
-          ))}
-        </div>
+          </div>
 
-        {selected && (
-          <ClueModal
-            clue={selected}
-            onClose={closeClue}
-            onReveal={reveal}
-            revealedAnswer={revealedAnswer}
-          />
-        )}
+          <div
+            className="grid w-full gap-4"
+            style={{ gridTemplateColumns: `repeat(${yearData.categories.length}, minmax(0, 1fr))` }}
+          >
+            {yearData.categories.map((cat: Category, ci: number) => (
+              <div key={ci} className="rounded bg-blue-700 p-2 text-center text-white dark:bg-blue-600">
+                <div className="mb-2 text-lg font-semibold">{cat.title}</div>
+                <div className="flex flex-col gap-2">
+                  {cat.clues.map((clue: Clue, i: number) => {
+                    const key = `${ci}-${i}`;
+                    const isUsed = used[key];
+                    return (
+                      <button
+                        key={i}
+                        onClick={() => openClue(ci, i)}
+                        disabled={isUsed}
+                        className={`rounded cursor-pointer px-3 py-4 text-xl font-bold ${isUsed ? "opacity-40" : "bg-white text-blue-700"}`}
+                      >
+                        {clue.value}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {selected && (
+            <ClueModal
+              clue={selected}
+              onClose={closeClue}
+              onReveal={reveal}
+              revealedAnswer={revealedAnswer}
+            />
+          )}
+        </div>
       </div>
-    </div>
+    </PasswordGate>
   );
 }
