@@ -230,8 +230,8 @@ export const YEARS: YearData[] = [
         clues: [
           { value: 100, question: "If you have 30 red socks, 20 white socks, and 10 blue socks, how many will you pick to get at least 1 matching pair without looking?", answer: "4", image: null },
           { value: 200, question: "Using only addition, combine eight 8s to make the number 1,000.", answer: "8 + 8 + 8 + 88 + 888 = 1000", image: null },
-          { value: 300, question: "Image puzzle (answer provided)", answer: "179", image: "puzzle300" },
-          { value: 400, question: "Image puzzle (answer provided)", answer: "The number on the left multiplied by 5 gives the sum of the other 2", image: "puzzle400" },
+          { value: 300, question: "", answer: "179", image: "/y10/puzzles300.png" },
+          { value: 400, question: "", answer: "The number on the left multiplied by 5 gives the sum of the other 2", image: "/y10/puzzles400.png" },
           { value: 500, question: "How can you make 720 using exactly six zeros and any mathematical operators? Hint: Use the '!' operator (0! = 1)", answer: "(0!+0!+0!+0!+0!+0!)! = 720", image: null },
         ],
       },
