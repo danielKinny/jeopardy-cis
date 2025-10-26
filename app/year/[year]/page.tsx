@@ -88,7 +88,10 @@ export default function YearPage() {
           </div>
         </div>
 
-        <div className="grid w-full grid-cols-3 gap-4">
+        <div
+          className="grid w-full gap-4"
+          style={{ gridTemplateColumns: `repeat(${yearData.categories.length}, minmax(0, 1fr))` }}
+        >
           {yearData.categories.map((cat: Category, ci: number) => (
             <div key={ci} className="rounded bg-blue-700 p-2 text-center text-white dark:bg-blue-600">
               <div className="mb-2 text-lg font-semibold">{cat.title}</div>

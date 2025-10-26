@@ -3,6 +3,7 @@ export type Clue = {
   question: string;
   answer: string;
   revealed?: boolean;
+  image?: string;
 };
 
 export type Category = {
@@ -55,33 +56,53 @@ export const YEARS: YearData[] = [
     year: 8,
     categories: [
       {
-        title: "Science",
+        title: "Algebra Adventures",
         clues: [
-          { value: 100, question: "The gas we breathe that is essential for life.", answer: "What is oxygen?" },
-          { value: 200, question: "H2O is the chemical formula for this.", answer: "What is water?" },
-          { value: 300, question: "The centre of an atom.", answer: "What is the nucleus?" },
-          { value: 400, question: "Process plants use to make food using sunlight.", answer: "What is photosynthesis?" },
-          { value: 500, question: "The force that pulls objects toward Earth.", answer: "What is gravity?" },
+          { value: 100, question: "Simplify: 3x + 4x", answer: "7x" },
+          { value: 200, question: "Solve: 3x - 5 = 10", answer: "x = 5" },
+          { value: 300, question: "Expand and simplify: 2(3x - 4) - (x - 5)", answer: "5x - 3" },
+          { value: 400, question: "Solve: 5x + 2 = 3x + 10", answer: "x = 4" },
+          { value: 500, question: "Factorise completely: 3x² - 12x", answer: "3x(x - 4)" },
         ],
       },
       {
-        title: "History",
+        title: "Geometry Galore",
         clues: [
-          { value: 100, question: "The ship that carried the Pilgrims to America in 1620.", answer: "What is the Mayflower?" },
-          { value: 200, question: "The wall built to divide East and West Germany.", answer: "What is the Berlin Wall?" },
-          { value: 300, question: "Leader of the Roman Empire at the time of Jesus' birth (emperor).", answer: "What is Augustus?" },
-          { value: 400, question: "The year the United States declared independence.", answer: "What is 1776?" },
-          { value: 500, question: "The war between the North and South in the United States from 1861–1865.", answer: "What is the American Civil War?" },
+          { value: 100, question: "How many degrees are in a right angle?", answer: "90°" },
+          { value: 200, question: "Find the area of a triangle with base 10 cm and height 6 cm.", answer: "30 cm²" },
+          { value: 300, question: "A rectangle has a perimeter of 36 cm and length 10 cm. Find its width.", answer: "8 cm" },
+          { value: 400, question: "The radius of a circle is 4 cm. Find its area (π = 3.14).", answer: "50.24 cm²" },
+          { value: 500, question: "The ratio of sides of two similar triangles is 2:5. If the smaller triangle’s area is 8 cm², find the larger triangle’s area.", answer: "50 cm²" },
         ],
       },
       {
-        title: "English",
+        title: "Number Ninjas",
         clues: [
-          { value: 100, question: "A word that means the opposite of 'cold'.", answer: "What is 'hot'?" },
-          { value: 200, question: "The author of 'Romeo and Juliet'.", answer: "Who is William Shakespeare?" },
-          { value: 300, question: "A noun that refers to a place where books are kept.", answer: "What is a library?" },
-          { value: 400, question: "A three-syllable word for a very large animal (elephant is one).", answer: "What is 'elephant'?" },
-          { value: 500, question: "The literary device that gives human traits to non-human things.", answer: "What is personification?" },
+          { value: 100, question: "What is 25% of 80?", answer: "20" },
+          { value: 200, question: "Write 0.75 as a fraction in simplest form.", answer: "3/4" },
+          { value: 300, question: "Evaluate 2⁴ + 3².", answer: "25" },
+          { value: 400, question: "Find the least common multiple (LCM) of 6, 8, and 12.", answer: "24" },
+          { value: 500, question: "A number is divided by 3, then increased by 5 to give 17. What was the original number?", answer: "36" },
+        ],
+      },
+      {
+        title: "Data Detectives",
+        clues: [
+          { value: 100, question: "What is the mode of 2, 4, 4, 6, 7?", answer: "4" },
+          { value: 200, question: "What is the mean of 3, 5, 7, 9, 11?", answer: "7" },
+          { value: 300, question: "Find the range of 10, 12, 8, 14, 9.", answer: "6" },
+          { value: 400, question: "The average of 5 numbers is 8. If four numbers are 5, 9, 11, and 7, find the missing number.", answer: "8" },
+          { value: 500, question: "A class of 20 students has an average height of 150 cm. If one new student joins, making the average 151 cm, what is the height of the new student?", answer: "171 cm" },
+        ],
+      },
+      {
+        title: "Math Mysteries (Word Problems)",
+        clues: [
+          { value: 100, question: "A pencil costs £2. How much do 5 pencils cost?", answer: "£10" },
+          { value: 200, question: "Sarah has £60. She spends one-third. How much does she have left?", answer: "£40" },
+          { value: 300, question: "A car travels 180 km in 3 hours, then 120 km in 2 hours. What is its average speed?", answer: "60 km/h" },
+          { value: 400, question: "A rectangle’s length is twice its width. Its perimeter is 48 cm. Find its area.", answer: "144 cm²" },
+          { value: 500, question: "A shop sells pens for £1.50 each and notebooks for £2. If someone spends £19.50 on 12 items, how many pens did they buy?", answer: "9 pens, 3 notebooks" },
         ],
       },
     ],
