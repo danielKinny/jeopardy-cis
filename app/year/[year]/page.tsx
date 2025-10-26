@@ -12,6 +12,9 @@ function ClueModal({ clue, onClose, onReveal, revealedAnswer }: { clue: Clue | n
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
       <div className="max-w-lg rounded bg-white p-6 dark:bg-zinc-900">
         <h3 className="mb-4 text-xl font-bold text-zinc-900 dark:text-zinc-50">${clue.value} question...</h3>
+        { clue.image && (
+          <img src={clue.image} alt="Clue Image" className="mb-4 max-h-64 w-full object-contain" />
+        )}
         <p className="mb-4 text-zinc-700 dark:text-zinc-200">{clue.question}</p>
         {revealedAnswer && (
             <div className="my-2 text-xl text-center bg-white text-black font-extrabold rounded-lg mb-4">{revealedAnswer}</div>
